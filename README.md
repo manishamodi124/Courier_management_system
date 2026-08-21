@@ -130,7 +130,7 @@ The project uses **PDFKit** for generating courier-related PDF documents.
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/manishamodi124/Courier_management_system.git
 ```
 
 ```bash
