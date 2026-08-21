@@ -208,8 +208,6 @@ Create a `.env` file inside the `backend` directory.
 | `MONGO_URI`  | MongoDB database connection URL        |
 | `JWT_SECRET` | Secret key used for JWT authentication |
 
-> ⚠️ Never upload your `.env` file or database credentials to GitHub.
-
 ---
 
 ## How It Works
@@ -303,6 +301,3 @@ If you find this project useful or interesting, consider giving the repository a
 
 ---
 
-## License
-
-This project is created for educational purposes.
