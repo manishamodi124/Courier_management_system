@@ -1,70 +1,309 @@
-# Getting Started with Create React App
+# Courier Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Courier Management System is a simple MERN Stack project for managing courier bookings, shipments, customers, staff, and delivery status.
 
-In the project directory, you can run:
+It has three types of users: Customer, Staff, and Admin. Each user can access the features needed for their role.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Customer
 
-### `npm test`
+* Register and login
+* Book a courier
+* Get a tracking ID
+* Track shipment
+* View booking history
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Staff
 
-### `npm run build`
+* Login
+* View assigned shipments
+* Manage deliveries
+* Update shipment status
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Admin
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Login
+* Dashboard
+* Manage customers
+* Manage staff
+* Manage shipments
+* View reports and statistics
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Main Modules
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* User Management
+* Courier Booking
+* Shipment Management
+* Courier Tracking
+* Staff Management
+* Admin Management
+* Authentication & Authorization
+* Dashboard & Reports
+* PDF Generation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Frontend
 
-## Learn More
+* React.js
+* React Router DOM
+* Axios
+* Chart.js
+* Recharts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT
+* bcryptjs
+* CORS
+* dotenv
+* PDFKit
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```text
+courier-management-system/
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── ...
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   ├── package.json
+│   ├── server.js
+│   └── ...
+│
+├── README.md
+└── .gitignore
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Authentication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+JWT is used for login and role-based access. Passwords are protected using **bcryptjs**.
 
-### Advanced Configuration
+### Admin and Staff Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Admin and Staff accounts can be created or updated from the backend using the available setup scripts.
 
-### Deployment
+```bash
+node createAdmin.js
+node createStaff.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+These scripts connect to MongoDB and create or update the accounts.
 
-### `npm run build` fails to minify
+> ⚠️ Do not add real passwords or credentials to GitHub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## PDF Generation
+
+The project uses **PDFKit** for generating courier-related PDF documents.
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone <YOUR-GITHUB-REPOSITORY-URL>
+```
+
+```bash
+cd courier-management-system
+```
+
+---
+
+### 2. Backend Setup
+
+Open the backend directory:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file inside the `backend` folder.
+
+```env
+PORT=5000
+MONGO_URI=YOUR_MONGODB_CONNECTION_STRING
+JWT_SECRET=YOUR_JWT_SECRET
+```
+
+Start the backend server:
+
+```bash
+npm run dev
+```
+
+If Nodemon is not configured, you can use:
+
+```bash
+node server.js
+```
+
+---
+
+### 3. Frontend Setup
+
+Open a new terminal and navigate to the frontend:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file inside the `backend` directory.
+
+| Variable     | Description                            |
+| ------------ | -------------------------------------- |
+| `PORT`       | Backend server port                    |
+| `MONGO_URI`  | MongoDB database connection URL        |
+| `JWT_SECRET` | Secret key used for JWT authentication |
+
+> ⚠️ Never upload your `.env` file or database credentials to GitHub.
+
+---
+
+## How It Works
+
+```text
+Customer
+   │
+   ├── Register / Login
+   │
+   ├── Book Courier
+   │
+   ├── Get Tracking ID
+   │
+   └── Track Shipment
+          │
+          ▼
+       Staff
+          │
+          ├── View Assigned Shipment
+          ├── Update Status
+          └── Manage Delivery
+          │
+          ▼
+       Admin
+          │
+          ├── Manage Customers
+          ├── Manage Staff
+          ├── Manage Shipments
+          └── View Dashboard & Statistics
+```
+
+---
+
+## Dashboard
+
+The Admin Dashboard shows basic information about customers, staff, shipments, and courier statistics.
+
+---
+
+## Future Improvements
+
+The project can be further extended with:
+
+* 📧 Email notifications
+* 📱 SMS notifications
+* 📍 Live GPS tracking
+* 💳 Online payment gateway
+* 📈 Advanced delivery analytics
+* 📱 Mobile application
+* 🔔 Real-time shipment notifications
+
+---
+
+## Project Highlights
+
+* Full-stack MERN application
+* Separate Customer, Staff and Admin roles
+* JWT-based authentication
+* Shipment tracking system
+* Courier booking management
+* Admin dashboard
+* Dashboard and reports
+* PDF generation
+* REST API based backend
+* MongoDB database integration
+
+---
+
+## Learning Outcomes
+
+* MERN stack development
+* REST API development
+* MongoDB database management
+* Authentication and authorization
+* React frontend development
+* Backend development with Node.js and Express
+
+---
+
+## Author
+
+**Manisha Modi**
+
+MERN Stack Project
+
+---
+
+## Support
+
+If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
+
+---
+
+## License
+
+This project is created for educational purposes.
