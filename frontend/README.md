@@ -117,7 +117,6 @@ node createStaff.js
 
 These scripts connect to MongoDB and create or update the accounts.
 
-> ⚠️ Do not add real passwords or credentials to GitHub.
 
 ---
 
