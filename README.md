@@ -59,21 +59,6 @@ It has three types of users: Customer, Staff, and Admin. Each user can access th
 * Axios
 * Chart.js
 * Recharts
-
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT
-* bcryptjs
-* CORS
-* dotenv
-* PDFKit
-
----
-
 ## Project Structure
 
 ```text
@@ -134,7 +119,7 @@ git clone https://github.com/modimanisha723/Courier_management_system.git
 ```
 
 ```bash
-cd courier-management-system
+cd courier-management-sys
 ```
 
 ---
